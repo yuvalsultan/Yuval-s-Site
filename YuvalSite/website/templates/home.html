@@ -1,0 +1,36 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
+%}
+<form method="POST">
+<br>
+<br>
+<h1>Welcome to your account</h1>
+    <a href="/wishList">View your wish list</a>
+    <br>
+    <br>
+    <br>
+
+<h3>Top 25 movies:</h3>
+    {%for i in MovieList%}
+    <br>
+    <br>
+    <div>
+    <table>
+        <tr>
+    <h1>{{i.name}}</h1>
+    <img src="{{i.img}}" style= "float:left; padding-right: 10px;"  alt="i.name">
+    <P>{{i.summ}}</P>
+    <h6>{{i.genre}}</h6>
+    <p>{{i.rate}}</p>
+    </tr>
+    <tr>
+    <button type="submit" name="MovieName" value="{{i.name}}" class="btn btn-primary" onclick="">+Add to wish list</button>
+
+    </tr>
+    </table>
+    <br>
+    </div>
+    <br>
+    <br>
+    {%endfor%}
+</form>
+{% endblock %}

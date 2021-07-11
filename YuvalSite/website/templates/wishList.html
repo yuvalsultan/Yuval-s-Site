@@ -1,0 +1,26 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
+    %}
+    <br>
+    <h1>My Wish List:</h1>
+    <br>
+    {%if not ForRealWish%}
+        <p>No movies in your wish list</p>
+        {%endif%}
+    {%for i in ForRealWish%}
+    <br>
+    <br>
+    <div>
+    <table>
+        <tr>
+    <h1>{{i.name}}</h1>
+    <img src="{{i.img}}" style= "float:left; padding-right: 10px;"  alt="i.name">
+    <P>{{i.summ}}</P>
+    <h6>{{i.genre}}</h6>
+    <p>{{i.rate}}</p>
+    <br>
+    </div>
+    <br>
+    <br>
+    {%endfor%}
+
+    {% endblock %}
